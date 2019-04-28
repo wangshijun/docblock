@@ -30,21 +30,21 @@
             "useLongnameInNav": true
         }
     },
-    "docdash": {
+    "docblock": {
         "static": true,
         "sort": true,
         "disqus": "",
 		"openGraph": {
-			"title": "Docdash",
+			"title": "docblock",
 			"type": "website",
 			"image": "https://cloud.githubusercontent.com/assets/447956/13398144/4dde7f36-defd-11e5-8909-1a9013302cb9.png",
-			"site_name": "Docdash",
-			"url": "http://clenemt.github.io/docdash/"
+			"site_name": "docblock",
+			"url": "http://clenemt.github.io/docblock/"
 		},
 		"meta": {
-			"title": "Docdash",
+			"title": "docblock",
 			"description": "A clean, responsive documentation template theme for JSDoc 3.",
-			"keyword": "jsdoc, docdash"
+			"keyword": "jsdoc, docblock"
 		},
         "search": true,
         "collapse": true,
@@ -53,7 +53,7 @@
         "scripts": [],
         "menu":{
             "Github repo":{
-                "href":"https://github.com/clenemt/docdash",
+                "href":"https://github.com/clenemt/docblock",
                 "target":"_blank",
                 "class":"menu-item",
                 "id":"repository"

@@ -1,26 +1,26 @@
-# Docdash
-[![Build Status](https://api.travis-ci.org/clenemt/docdash.png?branch=master)](https://travis-ci.org/clenemt/docdash) [![npm version](https://badge.fury.io/js/docdash.svg)](https://badge.fury.io/js/docdash) [![license](https://img.shields.io/npm/l/docdash.svg)](LICENSE.md)
+# docblock
+[![Build Status](https://api.travis-ci.org/clenemt/docblock.png?branch=master)](https://travis-ci.org/clenemt/docblock) [![npm version](https://badge.fury.io/js/docblock.svg)](https://badge.fury.io/js/docblock) [![license](https://img.shields.io/npm/l/docblock.svg)](LICENSE.md)
 
 A clean, responsive documentation template theme for JSDoc 3.
 
-![docdash-screenshot](https://cloud.githubusercontent.com/assets/447956/13398144/4dde7f36-defd-11e5-8909-1a9013302cb9.png)
+![docblock-screenshot](https://cloud.githubusercontent.com/assets/447956/13398144/4dde7f36-defd-11e5-8909-1a9013302cb9.png)
 
-![docdash-screenshot-2](https://cloud.githubusercontent.com/assets/447956/13401057/e30effd8-df0a-11e5-9f51-66257ac38e94.jpg)
+![docblock-screenshot-2](https://cloud.githubusercontent.com/assets/447956/13401057/e30effd8-df0a-11e5-9f51-66257ac38e94.jpg)
 
 ## Example
-See http://clenemt.github.io/docdash/ for a sample demo. :rocket:
+See http://clenemt.github.io/docblock/ for a sample demo. :rocket:
 
 ## Install
 
 ```bash
-$ npm install docdash
+$ npm install docblock
 ```
 
 ## Usage
 Clone repository to your designated `jsdoc` template directory, then:
 
 ```bash
-$ jsdoc entry-file.js -t path/to/docdash
+$ jsdoc entry-file.js -t path/to/docblock
 ```
 
 ## Usage (npm)
@@ -36,7 +36,7 @@ In your `jsdoc.json` file, add a template option.
 
 ```json
 "opts": {
-  "template": "node_modules/docdash"
+  "template": "node_modules/docblock"
 }
 ```
 
@@ -57,7 +57,7 @@ See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sampl
         "plugins/markdown"
     ],
     "opts": {
-        "template": "assets/template/docdash/",
+        "template": "assets/template/docblock/",
         "encoding": "utf8",
         "destination": "docs/",
         "recurse": true,
@@ -71,11 +71,11 @@ See the config file for the [fixtures](fixtures/fixtures.conf.json) or the sampl
 ```
 
 ## Options
-Docdash supports the following options:
+docblock supports the following options:
 
 ```
 {
-    "docdash": {
+    "docblock": {
         "static": [false|true],         // Display the static members inside the navbar
         "sort": [false|true],           // Sort the methods in the navbar
         "sectionOrder": [        // Order the main section in the navbar (default order shown here)
@@ -131,14 +131,14 @@ Place them anywhere inside your `jsdoc.json` file.
 
 ## Contributors
 
-[![0](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/images/0)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/links/0)
-[![1](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/images/1)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/links/1)
-[![2](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/images/2)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/links/2)
-[![3](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/images/3)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/links/3)
-[![4](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/images/4)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/links/4)
-[![5](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/images/5)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/links/5)
-[![6](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/images/6)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/links/6)
-[![7](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/images/7)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docdash/links/7)
+[![0](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/images/0)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/links/0)
+[![1](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/images/1)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/links/1)
+[![2](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/images/2)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/links/2)
+[![3](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/images/3)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/links/3)
+[![4](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/images/4)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/links/4)
+[![5](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/images/5)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/links/5)
+[![6](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/images/6)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/links/6)
+[![7](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/images/7)](https://sourcerer.io/fame/ar2rsawseen/clenemt/docblock/links/7)
 
 ## Thanks
 Thanks to [lodash](https://lodash.com) and [minami](https://github.com/nijikokun/minami).

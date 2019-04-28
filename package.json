@@ -1,7 +1,7 @@
 {
-  "name": "docdash",
+  "name": "docblock",
   "version": "1.1.0",
-  "description": "A clean, responsive documentation template theme for JSDoc 3 inspired by lodash and minami",
+  "description": "A clean, responsive documentation template theme for JSDoc 3 inspired by docdash",
   "main": "publish.js",
   "scripts": {
     "test": "jsdoc -c fixtures/fixtures.conf.json",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/clenemt/docdash.git"
+    "url": "https://github.com/wangshijun/docblock.git"
   },
   "devDependencies": {
     "jsdoc": "latest",

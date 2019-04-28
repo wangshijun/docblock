@@ -83,11 +83,11 @@ function needsSignature(doclet) {
             }
         }
     }
-    // and namespaces that are functions get a signature (but finding them is a		
-    // bit messy)		
-    else if (doclet.kind === 'namespace' && doclet.meta && doclet.meta.code &&		
-        doclet.meta.code.type && doclet.meta.code.type.match(/[Ff]unction/)) {		
-        needsSig = true;		
+    // and namespaces that are functions get a signature (but finding them is a
+    // bit messy)
+    else if (doclet.kind === 'namespace' && doclet.meta && doclet.meta.code &&
+        doclet.meta.code.type && doclet.meta.code.type.match(/[Ff]unction/)) {
+        needsSig = true;
     }
 
     return needsSig;
@@ -323,9 +323,9 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
     if (items && items.length) {
         var itemsNav = '';
-        var docdash = env && env.conf && env.conf.docdash || {};
-        var level = typeof docdash.navLevel === 'number' && docdash.navLevel >= 0 ?
-            docdash.navLevel :
+        var docblock = env && env.conf && env.conf.docblock || {};
+        var level = typeof docblock.navLevel === 'number' && docblock.navLevel >= 0 ?
+            docblock.navLevel :
             Infinity;
 
         items.forEach(function(item) {
@@ -336,7 +336,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
             var classes = '';
 
             // show private class?
-            if (docdash.private === false && item.access === 'private') return;
+            if (docblock.private === false && item.access === 'private') return;
 
             // depth to show?
             if (item.ancestors && item.ancestors.length > level) {
@@ -355,13 +355,13 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
                 }
                 itemsNav += linktoFn(item.longname, displayName.replace(/\b(module|event):/g, ''));
 
-                if (docdash.static && members.find(function (m) { return m.scope === 'static'; } )) {
+                if (docblock.static && members.find(function (m) { return m.scope === 'static'; } )) {
                     itemsNav += "<ul class='members'>";
 
                     members.forEach(function (member) {
                         if (!member.scope === 'static') return;
                         itemsNav += "<li data-type='member'";
-                        if(docdash.collapse)
+                        if(docblock.collapse)
                             itemsNav += " style='display: none;'";
                         itemsNav += ">";
                         itemsNav += linkto(member.longname, member.name);
@@ -376,7 +376,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
                     methods.forEach(function (method) {
                         itemsNav += "<li data-type='method'";
-                        if(docdash.collapse)
+                        if(docblock.collapse)
                             itemsNav += " style='display: none;'";
                         itemsNav += ">";
                         itemsNav += linkto(method.longname, method.name);
@@ -426,13 +426,13 @@ function buildNav(members) {
     var nav = '<h2><a href="index.html">Home</a></h2>';
     var seen = {};
     var seenTutorials = {};
-    var docdash = env && env.conf && env.conf.docdash || {};
-    if(docdash.menu){
-        for(var menu in docdash.menu){
+    var docblock = env && env.conf && env.conf.docblock || {};
+    if(docblock.menu){
+        for(var menu in docblock.menu){
             nav += '<h2><a ';
             //add attributes
-            for(var attr in docdash.menu[menu]){
-                nav += attr+'="' + docdash.menu[menu][attr] + '" ';
+            for(var attr in docblock.menu[menu]){
+                nav += attr+'="' + docblock.menu[menu][attr] + '" ';
             }
             nav += '>' + menu + '</a></h2>';
         }
@@ -440,7 +440,7 @@ function buildNav(members) {
     var defaultOrder = [
         'Classes', 'Modules', 'Externals', 'Events', 'Namespaces', 'Mixins', 'Tutorials', 'Interfaces'
     ];
-    var order = docdash.sectionOrder || defaultOrder;
+    var order = docblock.sectionOrder || defaultOrder;
     var sections = {
         Classes: buildMemberNav(members.classes, 'Classes', seen, linkto),
         Modules: buildMemberNav(members.modules, 'Modules', {}, linkto),
@@ -457,7 +457,7 @@ function buildNav(members) {
         var globalNav = '';
 
         members.globals.forEach(function(g) {
-            if ( (docdash.typedefs || g.kind !== 'typedef') && !hasOwnProp.call(seen, g.longname) ) {
+            if ( (docblock.typedefs || g.kind !== 'typedef') && !hasOwnProp.call(seen, g.longname) ) {
                 globalNav += '<li>' + linkto(g.longname, g.name) + '</li>';
             }
             seen[g.longname] = true;
@@ -481,7 +481,7 @@ function buildNav(members) {
     @param {Tutorial} tutorials
  */
 exports.publish = function(taffyData, opts, tutorials) {
-    var docdash = env && env.conf && env.conf.docdash || {};
+    var docblock = env && env.conf && env.conf.docblock || {};
     data = taffyData;
 
     var conf = env.conf.templates || {};
@@ -509,14 +509,14 @@ exports.publish = function(taffyData, opts, tutorials) {
 
     data = helper.prune(data);
 
-    docdash.sort !== false && data.sort('longname, version, since');
+    docblock.sort !== false && data.sort('longname, version, since');
     helper.addEventListeners(data);
 
     var sourceFiles = {};
     var sourceFilePaths = [];
     data().each(function(doclet) {
-         if(docdash.removeQuotes){
-            if(docdash.removeQuotes === "all"){
+         if(docblock.removeQuotes){
+            if(docblock.removeQuotes === "all"){
                 if(doclet.name){
                     doclet.name = doclet.name.replace(/"/g, '');
                     doclet.name = doclet.name.replace(/'/g, '');
@@ -526,7 +526,7 @@ exports.publish = function(taffyData, opts, tutorials) {
                     doclet.longname = doclet.longname.replace(/'/g, '');
                 }
             }
-            else if(docdash.removeQuotes === "trim"){
+            else if(docblock.removeQuotes === "trim"){
                 if(doclet.name){
                     doclet.name = doclet.name.replace(/^"(.*)"$/, '$1');
                     doclet.name = doclet.name.replace(/^'(.*)'$/, '$1');
