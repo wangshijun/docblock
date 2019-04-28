@@ -17,6 +17,9 @@
     "browser-sync": "latest",
     "watch-run": "latest"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Clement Moron <clement.moron@gmail.com>",
   "license": "Apache-2.0",
   "keywords": [
